@@ -46,7 +46,7 @@ model.add(layers.Dense(2, activation='relu'))   # number of nodes in first layer
 model.add(layers.Dense(4, activation='relu'))   # number of nodes in first layer ,sigmoid to activate this layer
 model.add(layers.Dense(1, bias_initializer=tf.keras.initializers.constant(1.0)))    # creates a forceful bias ,to minimise the losses
 
-model.compile(optimizer=tf.train.AdamOptimizer(0.2),   # optimisation functioon
+model.compile(optimizer=tf.train.AdamOptimizer(0.02),   # optimisation functioon
               loss='mse',  
               metrics=['accuracy'])
 
