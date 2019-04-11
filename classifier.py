@@ -30,7 +30,7 @@ x_train, x_test, y_train, y_test = __obtain_data__(path='data/pumula_metrics.csv
 model = tf.keras.Sequential() # sequential model(feed forward neural network)
 model.add(layers.Dense(4, activation='relu'))   # number of nodes in first layer ,relu to activate this layer,reduced the number of nuerons from 64 to 17
 model.add(layers.Dense(8, activation='relu'))   # number of nodes in first layer ,relu to activate this layer
-model.add(layers.Dense(2, activation='sofmax', dropout=0.3))
+model.add(layers.Dense(2, activation='sigmoid'))
 model.add(layers.Dense(1, bias_initializer=tf.keras.initializers.constant(1.0)))    # creates a forceful bias ,to minimise the losses
 
 model.compile(optimizer=tf.train.AdamOptimizer(0.02),   # optimisation functioon
