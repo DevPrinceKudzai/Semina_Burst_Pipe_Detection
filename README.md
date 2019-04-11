@@ -1,10 +1,9 @@
-# Semina Pipe Detection
+# Semina Pipe Detection (Project Pipeline)
 
-This is a Project from Semina which seeks to create AIS (Artificical Intelligent Systems) which enables civil and water experts to be able to classify a woman to be etheir be Benign or Malignant when it comes to being Diagnosed for Breast Cancer Either by FNA Biopsy (Fine Needle Aspiration) or Mammography. The DataSets for this project comes makes use of Data from Wincosin which is FNA  based Data of cells, DDSM and MIAS which are Dataset obtained from Mammography which in retrospect are mammograms on is in form of serialized tfrecords and the later in bpm (bitmap) Images.
+This is a Project from Semina which seeks to create AIS (Artificical Intelligent Systems) which enables civil and water experts to be able to classify whether there is a pipe burst or not  .The DataSets for this project comes makes use of Data from a selected Bulawayo Surburb which will make use of pressure and maass flowrate values and labels of either they has been a burst pipe or note which is reflected by using ones (1) and zeros (0) (Binary Classification). The Dataset obtained from Samples obtained Bulwayo City Council[The Data is highly experimental].
 
-The project is highly experiment this is a guide to Semina clinically implemement the AIS after overcoming the obstacles meet in classification and also coming up with a standard way of obtaining either standardised Images from MRI and also having standard input parameters for FNA Biopsy.
 
-The project is being developed by DeveloperPrince being guided by Advisory Pathologist who's names shall not be exposed in this documentation.
+The project is being developed by DeveloperPrince being guided by Advisory Members who's names shall not be exposed in this documentation.
 
 ## Requirements
 
