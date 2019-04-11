@@ -17,20 +17,6 @@ tf.enable_eager_execution()
 
 tf.logging.set_verbosity(tf.logging.ERROR)
 
-# labels = pd.DataFrame(data_label)
-# data_df = pd.DataFrame(data)
-
-# data_len = len(data_df.index)
-# train_labels_len = int(data_len * 0.8)  # training data from original data
-# test_labels_len = int(data_len * 0.2)   # testing data from original data
-# train_data_len = int(data_len * 0.8)
-# test_data_len = int(data_len * 0.2)
-
-
-# train_data = data_df.iloc[0:train_data_len, :]
-# test_data = data_df.iloc[0:test_data_len, :]
-# train_labels = labels.iloc[0:train_labels_len, :]
-# test_labels = labels.iloc[0:test_labels_len, :]
 def __obtain_data__(path, number_features, number_labels):
     data_set = pd.read_csv(path, low_memory = False)
     class_columns = number_labels + number_features
@@ -42,8 +28,9 @@ def __obtain_data__(path, number_features, number_labels):
 x_train, x_test, y_train, y_test = __obtain_data__(path='data/pumula_metrics.csv', number_features=2, number_labels=1)
 
 model = tf.keras.Sequential() # sequential model(feed forward neural network)
-model.add(layers.Dense(2, activation='relu'))   # number of nodes in first layer ,relu to activate this layer,reduced the number of nuerons from 64 to 17
-model.add(layers.Dense(4, activation='relu'))   # number of nodes in first layer ,sigmoid to activate this layer
+model.add(layers.Dense(4, activation='relu'))   # number of nodes in first layer ,relu to activate this layer,reduced the number of nuerons from 64 to 17
+model.add(layers.Dense(8, activation='relu'))   # number of nodes in first layer ,relu to activate this layer
+model.add(layers.Dense(2, activation='sofmax', dropout=0.3))
 model.add(layers.Dense(1, bias_initializer=tf.keras.initializers.constant(1.0)))    # creates a forceful bias ,to minimise the losses
 
 model.compile(optimizer=tf.train.AdamOptimizer(0.02),   # optimisation functioon
